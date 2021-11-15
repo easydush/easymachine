@@ -1,14 +1,7 @@
-from math import sqrt
+from utils import get_distance
 
 
-def get_distance(point_1, point_2):
-    distance = 0.0
-    for i in range(len(point_1)):
-        distance += (point_1[i] - point_2[i]) ** 2
-    return sqrt(distance)
-
-
-class KNN():
+class KNN:
     def __init__(self, k):
         self.k = k
         self.x_train = []
