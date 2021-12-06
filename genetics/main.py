@@ -79,13 +79,13 @@ class GeneticAlgorithm:
     def crossover(self, population):
         newborns = []
         for _ in range(len(population) * self.productivity_ratio):
-            dad, mom = sample(population, 2)
+            first_parent, second_parent = sample(population, 2)
             child = []
-            for gene_m, gene_f, idx in zip(dad[0], mom[0], range(len(dad[0]))):
+            for gene_1, gene_2, idx in zip(first_parent[0], second_parent[0], range(len(first_parent[0]))):
                 if idx % 2 == 0:
-                    gene = gene_m
+                    gene = gene_1
                 else:
-                    gene = gene_f
+                    gene = gene_2
                 child.append(gene)
             newborns.append(child)
         return newborns
